@@ -2,32 +2,103 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, mininum-scale=1.0">
   <title>Shibu Cafe</title>
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset-context/cssreset-context-min.css">
-  <!--link rel="stylesheet" href="css/normalize.css"-->
 </head>
 <body>
   <header class="header">
-    <p class="site-title-sub">Web designer's portfolio</p>
+    <p class="site-title-sub">Relaxing & Modern Cafe</p>
     <h1 class="site-title">Shibu Cafe</h1>
-    <p class="site-description">Check out some of my works.</p>
+    <p class="site-description">こだわりのコーヒーとゆったりした空間</p>
+    <div class="buttons">
+      <a class="button" href="#about">Shibu Cafeについて</a>
+      <a class="button button-showy" href="#contact">お問い合わせ</a>
+    </div>
   </header>
-  <section class="about">
+  <section class="about" id="about">
     <h2 class="heading">ABOUT</h2>
+    <p class="about-text">
+      渋谷区道玄坂を登ったところにあるカフェレストラン。
+    </p>
+    <p class="about-text">
+      豆は全てフェアトレード。
+    </p>
+    <p class="about-text">
+      バリスタが淹れるコーヒーを楽しみながら、ゆっくり過ごせる空間をご用意しております。
+    </p>
   </section>
   <section class="menu">
     <h2 class="heading">MENU</h2>
+    <div class="menus-wrapper">
+      <div class="menu-box espresso1">
+        <img class="menu-image" src="images/espresso-compana _001.jpg" alt="メニュー1">
+        <div class="menu-description">
+          <div class="menu-description-inner">
+            <p class="menu-text">
+              カフェラテ : 500円<br>
+              カフェオレ : 500円
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-box espresso2">
+        <img class="menu-image" src="images/espresso-compana _002.jpg" alt="メニュー2">
+        <div class="menu-description">
+          <div class="menu-description-inner">
+            <p class="menu-text">
+              エスプレッソ : 600円
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-box chiffoncake">
+        <img class="menu-image" src="images/chiffon-cake_001.jpg" alt="メニュー3">
+        <div class="menu-description">
+          <div class="menu-description-inner">
+            <p class="menu-text">
+              フルーツケーキ : 450円<br>
+              シフォンケーキ : 450円
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-box fruitsplate">
+        <img class="menu-image" src="images/fruits-plate_001.jpg" alt="メニュー4">
+        <div class="menu-description">
+          <div class="menu-description-inner">
+            <p class="menu-text">
+              フルーツプレート : 500円
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="access">
     <h2 class="heading">ACCESS</h2>
+    <p class="about-text">
+      住所：150-0043 東京都新宿区道玄坂 xxx-xx Cafe
+    </p>
+    <p class="about-text">
+      電話番号：000-00-0000
+    </p>
+    <p class="about-text">
+      営業時間：7:30-24:00
+    </p>
   </section>
-  <section class="contact">
+  <section class="contact" id="contact">
     <h2 class="heading">CONTACT</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="お名前">
+      <textarea name="message" placeholder="メッセージ"></textarea>
+      <input type="submit" value="SEND">
+    </form>
   </section>
-  <footer>
-    <p><small>© Color & Cut Salon</small></p>
+  <footer class="footer">
+    © Shibu Cafe
   </footer>
 </body>
 </html>

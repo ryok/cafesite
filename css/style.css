@@ -11,7 +11,7 @@ body {
   background-size: cover;
   color: #fff;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: 'Slabo 27px', "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 }
 
@@ -39,9 +39,29 @@ body {
   font-size: 7.6rem;
 }
 .site-description {
-  margin-bottom: 500px;
+  margin-bottom: 240px;
   color: #888;
   font-size: 1.6rem;
+}
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #afa58d;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button-showy {
+  background-color: #f1b400;
+}
+.buttons .button {
+  margin: 10px;
 }
 
 /* section *******************************/
@@ -53,6 +73,18 @@ body {
   letter-spacing: 2px;
   font-size: 4rem;
 }
+.heading::before,
+.heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #999;
+}
+.heading::before {
+  bottom: 5px;
+}
 
 /* about *******************************/
 .about {
@@ -60,12 +92,82 @@ body {
   background: #151515 url('../images/caffe-latte_002.jpg') no-repeat center;
   background-size: cover;
 }
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+}
 
 /* menu *******************************/
 .menu {
-  padding: 80px 30px;
-  background: #151515 url('../images/fruits-plate_001.jpg') no-repeat center;
-  background-size: cover;
+  background-color: #fff;
+  padding: 80px 0;
+  color: #333;
+}
+.menus-wrapper {
+  display: table;
+  width: 100%;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+.menu-box {
+  position: relative;
+  display: table-cell;
+}
+.menu-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.2;
+  transform: scaleY(-1);
+}
+.menu-box.espresso1::after {
+  background-image: url('../images/espresso-compana _001.jpg');
+}
+.menu-box.espresso2::after {
+  background-image: url('../images/espresso-compana _002.jpg');
+}
+.menu-box.chiffoncake::after {
+  background-image: url('../images/chiffon-cake_001.jpg');
+}
+.menu-box.fruitsplate::after {
+  background-image: url('../images/fruits-plate_001.jpg');
+}
+.menu-box:nth-child(odd) .menu-image {
+  margin: 50% 0 0;
+}
+.menu-box:nth-child(odd) .menu-description,
+.menu-box:nth-child(odd)::after {
+  top: 0;
+}
+.menu-image {
+  display: block;
+  width: 100%;
+  margin: 0 0 50%;
+}
+.menu-description {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+}
+.menu-description-inner {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.menu-text {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  line-height: 2;
 }
 
 /* access *******************************/
@@ -73,14 +175,117 @@ body {
   padding: 80px 30px;
   background: #151515 url('../images/interior_001.jpg') no-repeat center;
   background-size: cover;
+  color: #FF4500;
 }
 
 /* contact *******************************/
 .contact {
-  padding: 80px 30px;
-  background: #151515 url('../images/caffe-latte_004.jpg') no-repeat center;
-  background-size: cover;
+  background-color: #fff;
+  padding: 80px 0 150px;
+  color: #333;
+}
+.contact-form {
+  width: 50%;
+  margin: 50px auto 0;
+}
+.contact-form input[type=text],
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+.contact-form textarea {
+  height: 150px;
+}
+.contact-form input[type=submit] {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.contact-form input[type=submit]:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.contact-form input[type=text]::focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5) inset;
 }
 
 /* footer *******************************/
+.footer {
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
 
+/* スマートフォンとタブレット向け *******************************/
+@media (max-width: 1024px) {
+  body {
+    background-image: none;
+  }
+}
+@media (max-width: 768px) {
+  .site-title-sub::before,
+  .site-title-sub::after {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+  .site-title-sub {
+    font-size: 1.7rem;
+  }
+  .site-title {
+    margin-top: 35px;
+    font-size: 5rem;
+  }
+  .header {
+    padding-top: 60px;
+  }
+  .button:hover {
+    opacity: 1;
+  }
+  .heading {
+    font-size: 2.5rem;
+  }
+  body {
+    font-size: 1.3rem;
+  }
+  .about-text {
+    line-height: 1.8;
+  }
+
+  /* menu *******/
+  .menu-wrapper,
+  .menu-box {
+    display: block;
+  }
+  .menu-image {
+    display: none;
+  }
+  .menu-description {
+    position: relative;
+  }
+  .menu-box::after {
+    top: 0;
+    height: 100%;
+    background-size: cover;
+  }
+
+  /* contact *******/
+  .contact-form {
+    width: 80%;
+  }
+  .contact {
+    padding-bottom: 80px;
+  }
+}
